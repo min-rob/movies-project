@@ -1,3 +1,4 @@
+import { run } from "node:test";
 import {
     getMovies,
     getGenres,
@@ -5,11 +6,29 @@ import {
     getMovieBackdrop,
 } from "../api/movies.js";
 
-const basePath = "../../assets/img/movie-backdrop/";
+const basePath = "./assets/img/movie-backdrop";
 
-const createFeaturedSlide = async () => {
-    const parentContainer = document.querySelector(".features");
+const createFeaturedSlide = async (movie) => {
+    let {
+        title,
+        release_date,
+        cast,
+        director,
+        description,
+        runtime,
+        vote_average,
+        backdrop,
+    } = movie;
+
     const newSlide = document.createElement("div");
+
+    title = movie.title;
+    release_date = movie.release_date;
+    cast = movie.cast;
+    director = movie.director;
+    runtime = movie.runtime;
+    vote_average = movie.vote_average;
+    backdrop = movie.backdrop;
 
     newSlide.classList.add("container-fluid");
     newSlide.classList.add("slide");
@@ -22,12 +41,12 @@ const createFeaturedSlide = async () => {
                                 rgba(0, 0, 0, 0.3),
                                 rgba(0, 0, 0, 0.3)
                             ),
-                            url(./assets/img/movie-backdrop/Inception.jpg);
+                            url(${basePath}${backdrop});
                     "
                 >
                     <div class="row flex-grow-1 align-items-center">
                         <div class="col px-0 d-flex flex-column gap-4 lt-info">
-                            <h1 class="movie-title">Inception</h1>
+                            <h1 class="movie-title">${title}</h1>
                             <div class="movie-info-basic">
                                 <span class="rating">
                                     <img
@@ -35,7 +54,7 @@ const createFeaturedSlide = async () => {
                                         height="35"
                                         width="35"
                                     />
-                                    8.8/10
+                                    ${vote_average}/10
                                 </span>
                                 <ul
                                     class="movie-detail-list d-flex align-items-start gap-3"
@@ -52,7 +71,7 @@ const createFeaturedSlide = async () => {
                                                 height="20"
                                                 width="20"
                                         /></span>
-                                        July, 2010
+                                        ${release_date}
                                     </li>
                                     <li>
                                         <span>
@@ -62,7 +81,7 @@ const createFeaturedSlide = async () => {
                                                 width="20"
                                             />
                                         </span>
-                                        2hr 38min
+                                        ${runtime}
                                     </li>
                                 </ul>
                             </div>
@@ -91,22 +110,19 @@ const createFeaturedSlide = async () => {
                                     <li>
                                         <h3>Synopsis:</h3>
                                         <p class="description">
-                                            "A thief who enters the subconscious
-                                            minds of others to steal their
-                                            secrets.""
+                                            ${description}
                                         </p>
                                     </li>
                                     <li>
                                         <h3>Director:</h3>
                                         <span class="director"
-                                            >Christopher Nolan</span
+                                            >${director}</span
                                         >
                                     </li>
                                     <li>
                                         <h3>Cast:</h3>
                                         <span class="cast"
-                                            >Leonardo DiCaprio, Joseph
-                                            Gordon-Levitt, Ellen Page</span
+                                            >${cast}</span
                                         >
                                     </li>
                                 </ul>
@@ -115,9 +131,12 @@ const createFeaturedSlide = async () => {
                     </div>
                 </div>
     `;
+
+    return newSlide;
 };
 
 const renderMovieSlide = async () => {
+    const parentContainer = document.querySelector(".features");
     const movies = await getMovies();
     for (let movie of movies) {
         const movieId = await getMovieId(movie.title);
