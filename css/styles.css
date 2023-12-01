@@ -14,27 +14,85 @@ layer(framework);
 
 body {
     font-family: var(--text-font);
-    margin-left: 35px;
-    margin-right: 35px;
     background-color: black;
     color: white;
 }
 
-header {
+.container-fluid.header {
     margin-top: 15px;
     margin-bottom: 15px;
-}
-
-.page-wrapper {
-    height: 100dvh;
-}
-
-.logo-title {
-    font-family: var(--text-display);
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
 }
 
 nav ul {
     display: flex;
     flex-direction: row;
     gap: 24px;
+}
+
+.page-wrapper {
+    height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.featured-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid:has(.row) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > .row {
+        width: 100%;
+        max-width: 1140px;
+    }
+}
+
+.container-fluid.features {
+    min-height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-fluid.slide {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+    transition: all ease 0.3s;
+    &.active {
+        left: 0;
+        & ~ .container-fluid.slide {
+            left: 100%;
+        }
+    }
+}
+
+.logo-title {
+    font-family: var(--text-display);
+}
+
+.movie-title {
+    font-family: var(--text-display);
+    font-size: 128px;
+}
+
+.slide {
+    height: 100dvh;
+    background-position: center;
+    background-size: cover;
 }

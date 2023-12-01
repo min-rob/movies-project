@@ -13,7 +13,20 @@ export const getMovies = async () => {
     return data;
 };
 
-export const getMovieById = async (id) => {
+export const getMovieId = async (search) => {
+    const movies = await getMovies();
+    try {
+        for (let movie of movies) {
+            if (movie.title.includes(search)) {
+                return movie.id;
+            }
+        }
+    } catch (error) {
+        return console.log("error fetching movie ID =>", error);
+    }
+};
+
+export const getMovieBackdrop = async (id) => {
     const url = `${baseUrl}/movies/${id}`;
     const options = {
         method: "GET",
@@ -23,7 +36,7 @@ export const getMovieById = async (id) => {
     };
     const response = await fetch(url, options);
     const data = await response.json();
-    return data;
+    return data.backdrop;
 };
 
 export const getGenres = async () => {

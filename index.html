@@ -8,16 +8,19 @@
     </head>
     <body>
         <div class="page-wrapper">
-            <header class="container">
+            <header class="container-fluid header">
                 <nav class="row">
                     <div
-                        class="col-3 d-flex flex-column justify-content-center"
+                        class="col-3 d-flex flex-column justify-content-center p-0"
                         id="nav-lt"
                     >
                         <h2 class="logo-title">WatchThis</h2>
                     </div>
-                    <div class="col-6" id="nav-center"></div>
-                    <div class="col-3" id="nav-rt">
+                    <div class="col-6 p-0" id="nav-center"></div>
+                    <div
+                        class="col-3 p-0 d-flex justify-content-end"
+                        id="nav-rt"
+                    >
                         <ul>
                             <li>
                                 <a href="/">Search</a>
@@ -28,10 +31,55 @@
                     </div>
                 </nav>
             </header>
-            <div class="container">
-                <div class="row">
-                    <div class="col"></div>
+            <div class="container-fluid features p-0">
+                <!-- SLIDE START -->
+                <div
+                    class="container-fluid slide active"
+                    style="
+                        background: linear-gradient(
+                                to right,
+                                rgba(0, 0, 0, 0.3),
+                                rgba(0, 0, 0, 0.3)
+                            ),
+                            url(./assets/img/movie-backdrop/Inception.jpg);
+                    "
+                >
+                    <div class="row flex-grow-1 align-items-center">
+                        <div class="col-6 p-0 lt-info">
+                            <h1 class="movie-title">Inception</h1>
+                            <ul
+                                class="movie-detail-list d-flex align-items-start gap-3"
+                            >
+                                <li>
+                                    <a href="/">Action</a>,
+                                    <a href="/">Science Fiction</a>,
+                                    <a href="/">Mystery</a>
+                                </li>
+                                <li>
+                                    <span
+                                        ><img
+                                            src="./assets/img/icons/calendar.svg"
+                                            height="20"
+                                            width="20"
+                                    /></span>
+                                    July, 2010
+                                </li>
+                                <li>
+                                    <span>
+                                        <img
+                                            src="./assets/img/icons/time-icon.svg"
+                                            height="20"
+                                            width="20"
+                                        />
+                                    </span>
+                                    2hr 38min
+                                </li>
+                            </ul>
+                        </div>
+                        <div class="col-6 p-0 rt-info"></div>
+                    </div>
                 </div>
+                <!-- END SLIDE -->
             </div>
         </div>
         <script type="module" src="./js/main.js"></script>
