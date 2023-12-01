@@ -15,7 +15,7 @@ import { keys } from "./key.js";
 
 class MoviesAPI {
     constructor(key) {
-        this.key = keys.movesAPI;
+        this.key = keys.MOVIE_DB_API;
     }
 }
 
