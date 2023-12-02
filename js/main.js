@@ -5,6 +5,12 @@ import {
     getMovieBackdrop,
 } from "./api/movies.js";
 import { getUsers, getUserById } from "./api/users.js";
+import {
+    renderMovieSlide,
+    handleActiveState,
+    updatePagination,
+    createPagination,
+} from "./components/hero-slider.js";
 
 (async () => {
     const movies = await getMovies();
@@ -18,4 +24,9 @@ import { getUsers, getUserById } from "./api/users.js";
 
     const movieId = await getMovieId("Inception");
     console.log(movieId);
+
+    renderMovieSlide(movies);
+    handleActiveState();
+    createPagination();
+    updatePagination();
 })();

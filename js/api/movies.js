@@ -40,7 +40,7 @@ export const getMovieBackdrop = async (id) => {
 };
 
 export const getGenres = async () => {
-    const url = "http://localhost:3000/genres";
+    const url = `${baseUrl}/genres`;
     const options = {
         method: "GET",
         headers: {
