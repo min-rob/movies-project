@@ -88,6 +88,7 @@ nav ul {
 
 .logo-title {
     font-family: var(--text-display);
+    font-size: 38px;
 }
 
 .movie-title {
@@ -137,4 +138,29 @@ nav ul {
     justify-content: center;
     align-items: center;
     gap: 12px;
+}
+
+.down-btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 2%;
+    left: 50%;
+    z-index: 3;
+}
+
+.movies-list {
+    position: relative;
+    min-height: 100dvh;
+}
+
+.bottom-menu-bar {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 200px;
+    max-width: 200px;
+    padding: 10px;
+    border-radius: 10px;
+    background-color: var(--color-sec-accent);
 }
