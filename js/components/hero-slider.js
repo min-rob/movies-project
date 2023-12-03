@@ -99,7 +99,7 @@ const createFeaturedSlide = (movie) => {
                                         Watch Trailer
                                     </span>
                                 </button>
-                                <button class="btn btn-primary trailer-btn">
+                                <button class="btn btn-primary more-btn">
                                     <span>
                                         <img
                                             src="./assets/img/icons/add-icon.svg"
@@ -194,44 +194,6 @@ export const createPagination = () => {
 export const updatePagination = () => {
     const paginationItems = document.querySelectorAll(".pagination span");
     const slides = document.querySelectorAll(".slide");
-
-    // setInterval(() => {
-    //     for (let i = 0; i < slides.length; i++) {
-    //         if (slides[i].classList.contains("active")) {
-    //             for (let item of paginationItems) {
-    //                 let lastIndex = paginationItems.length - 1;
-    //                 if (
-    //                     item.getAttribute("id") === slides[i].getAttribute("id")
-    //                 ) {
-    //                     const img = item.querySelector("img");
-    //                     img.setAttribute(
-    //                         "src",
-    //                         "./assets/img/icons/pagination-active.svg"
-    //                     );
-    //                     item.previousElementSibling
-    //                         .querySelector("img")
-    //                         .setAttribute(
-    //                             "src",
-    //                             "./assets/img/icons/pagination-inactive.svg"
-    //                         );
-    //                 }
-    //                 if (paginationItems.indexOf(item) === lastIndex) {
-    //                     item.querySelector("img").setAttribute(
-    //                         "src",
-    //                         "./assets/img/icons/pagination-inactive.svg"
-    //                     );
-    //                     paginationItems[0]
-    //                         .querySelector("img")
-    //                         .setAttribute(
-    //                             "src",
-    //                             "./assets/img/icons/pagination-active.svg"
-    //                         );
-    //                 }
-    //             }
-    //             break;
-    //         }
-    //     }
-    // }, 5000);
     setInterval(() => {
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains("active")) {
@@ -244,15 +206,52 @@ export const updatePagination = () => {
                             "src",
                             "./assets/img/icons/pagination-active.svg"
                         );
+                        item.classList.add("active");
                     } else {
                         img.setAttribute(
                             "src",
                             "./assets/img/icons/pagination-inactive.svg"
                         );
+                        item.classList.remove("active");
                     }
                 });
                 break;
             }
         }
     }, 5000);
+};
+
+export const moreInfoClick = () => {
+    const moreInfoBtns = document.querySelectorAll(".more-btn");
+    for (let moreInfoBtn of moreInfoBtns) {
+        moreInfoBtn.addEventListener("click", () => {
+            const movieInfo = document.querySelector(".movie-more-info");
+            movieInfo.classList.toggle("show");
+            const img = moreInfoBtn.querySelector("img");
+            img.classList.toggle("clicked");
+            const clicked = img.classList.contains("clicked");
+            if (clicked) {
+                img.setAttribute("src", "./assets/img/icons/remove-icon.svg");
+            } else {
+                img.setAttribute("src", "./assets/img/icons/add-icon.svg");
+            }
+        });
+    }
+};
+
+export const handlePaginationClick = () => {
+    const paginationItems = document.querySelectorAll(".pagination span");
+    for (let item of paginationItems) {
+        item.addEventListener("click", () => {
+            const slides = document.querySelectorAll(".slide");
+            const slideID = item.getAttribute("id");
+            for (let slide of slides) {
+                if (slide.getAttribute("id") === slideID) {
+                    slide.classList.add("active");
+                } else {
+                    slide.classList.remove("active");
+                }
+            }
+        });
+    }
 };

@@ -12,3 +12,7 @@ a {
 li {
     margin-bottom: 0;
 }
+
+p {
+    margin: unset;
+}

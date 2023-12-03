@@ -51,3 +51,16 @@ export const getGenres = async () => {
     const data = await response.json();
     return data;
 };
+
+export const getMovieByGenreId = async (id) => {
+    const url = `${baseUrl}/movies?genre=${id}`;
+    const options = {
+        method: "GET",
+        headers: {
+            "Content-Type": "application/json",
+        },
+    };
+    const response = await fetch(url, options);
+    const data = await response.json();
+    return data;
+};
