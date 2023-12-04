@@ -140,8 +140,6 @@ const createFeaturedSlide = (movie) => {
 export const renderMovieSlide = async (movies) => {
     const parentContainer = document.querySelector(".features");
 
-    console.log(createFeaturedSlide(movies));
-
     const movieSlideFragment = document.createDocumentFragment();
 
     for (let movie of movies) {

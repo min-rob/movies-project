@@ -95,7 +95,6 @@ export const renderMovieCards = async (category, container) => {
     const movies = category;
     const movieCards = movies.map((movie) => createMovieCard(movie));
     const movieContainer = container;
-    console.log(movieContainer);
     movieContainer.innerHTML = "";
     movieContainer.append(...movieCards);
 };

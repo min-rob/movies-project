@@ -1,17 +1,22 @@
-import { getGenres, getMovies } from "../api/movies.js";
+import { getGenres } from "../api/movies.js";
 
 export const displayCategory = async () => {
-    const genreList = document.createElement("div");
-    const parentContainer = document.querySelector(".genres");
-    genreList.classList.add("genre-list-container");
+    const genreList = document.querySelector(".genres");
+    const parentContainer = document.querySelector(".genre-list");
     const genres = await getGenres();
     console.log(genres);
-    genres.forEach((genre) => {
+    for (let genre of genres) {
         genreList.innerHTML += `
-        <span data-genre>
-            <p id="${genre.id}">${genre.name}</p>
-        </span>
+            <p id="${genre.id}" data-genre>${genre.name}</p>
         `;
-    });
+    }
     parentContainer.appendChild(genreList);
+};
+
+export const handleBtnClick = () => {
+    const appBtn = document.querySelector(".app-btn");
+    appBtn.addEventListener("click", () => {
+        const genreList = document.querySelector(".genre-list");
+        genreList.classList.toggle("hide");
+    });
 };

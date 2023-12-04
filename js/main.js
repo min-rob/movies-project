@@ -1,17 +1,10 @@
-import {
-    getMovies,
-    getGenres,
-    getMovieId,
-    getMovieBackdrop,
-    getMovieByGenreId,
-} from "./api/movies.js";
+import { getMovies } from "./api/movies.js";
 import { getUsers, getUserById } from "./api/users.js";
 import {
     renderMovieCards,
     movieLatest,
     moviePopularity,
 } from "./components/cards.js";
-import { renderGenrePage } from "./components/genre-display.js";
 import {
     renderMovieSlide,
     handleActiveState,
@@ -21,20 +14,28 @@ import {
     handlePaginationClick,
 } from "./components/hero-slider.js";
 
-import { displayCategory } from "./components/menu-app.js";
+import { displayCategory, handleBtnClick } from "./components/menu-app.js";
+import { renderGenrePage } from "./components/genre-display.js";
+
+const handleAppBarHide = () => {
+    window.addEventListener("scroll", () => {
+        const scrollPosition = window.scrollY || window.pageYOffset;
+        if (scrollPosition === 0) {
+            document.querySelector(".button-container").classList.add("hidden");
+        } else if (scrollPosition > 0) {
+            document
+                .querySelector(".button-container")
+                .classList.remove("hidden");
+        }
+    });
+};
 
 (async () => {
+    handleAppBarHide();
     const movies = await getMovies();
     console.log(movies);
 
     const users = await getUsers();
-    console.log(users);
-
-    const backdrop = await getMovieBackdrop(1);
-    console.log(backdrop);
-
-    const movieId = await getMovieId("Inception");
-    console.log(movieId);
 
     renderMovieSlide(movies);
     handleActiveState();
@@ -51,8 +52,7 @@ import { displayCategory } from "./components/menu-app.js";
     console.log("latest movies:", latestMovies);
     renderMovieCards(latestMovies, latestContainer);
     renderMovieCards(popularMovies, featuredContainer);
-    displayCategory();
-    const genres = await getMovieByGenreId(28);
-    console.log(genres);
+    await displayCategory();
     renderGenrePage();
+    handleBtnClick();
 })();

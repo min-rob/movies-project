@@ -35,6 +35,9 @@ nav ul {
 }
 
 .hide {
+    display: none !important;
+}
+.hidden {
     opacity: 0;
 }
 
@@ -168,7 +171,7 @@ nav ul {
 }
 
 .button-container {
-    position: absolute;
+    position: fixed;
     bottom: 0;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -177,6 +180,7 @@ nav ul {
     padding: 10px;
     border-radius: 10px;
     background-color: var(--color-primary);
+    transition: all ease 0.3s;
 }
 
 .movie-card {
@@ -263,7 +267,7 @@ nav ul {
     color: var(--color-sec-accent);
 }
 
-.genre-list-container {
+.genres {
     display: flex;
     gap: 12px;
     flex-wrap: wrap;
@@ -278,4 +282,14 @@ nav ul {
 #card-container {
     display: flex;
     gap: 2rem;
+}
+
+.app-btn {
+    cursor: pointer;
+}
+.home-btn {
+    cursor: pointer;
+}
+.search-btn {
+    cursor: pointer;
 }

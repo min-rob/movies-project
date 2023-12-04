@@ -53,14 +53,17 @@ export const getGenres = async () => {
 };
 
 export const getMovieByGenreId = async (id) => {
-    const url = `${baseUrl}/movies?genre=${id}`;
-    const options = {
-        method: "GET",
-        headers: {
-            "Content-Type": "application/json",
-        },
-    };
-    const response = await fetch(url, options);
-    const data = await response.json();
-    return data;
+    const movies = await getMovies();
+    const moviesWithGenreId = [];
+
+    for (let movie of movies) {
+        const genres = movie.genres;
+        for (let genre of genres) {
+            if (genre.id === parseInt(id)) {
+                moviesWithGenreId.push(movie);
+            }
+        }
+    }
+
+    return moviesWithGenreId;
 };
