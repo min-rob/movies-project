@@ -71,6 +71,15 @@ const levenshteinDistance = (a, b) => {
 
     return distanceMatrix[b.length][a.length];
 };
+const createSpinner = () => {
+    const spinner = document.createElement("div");
+    spinner.classList.add("spinner-border", "hidden");
+    spinner.setAttribute("role", "status");
+    spinner.setAttribute("id", "spinner");
+    spinner.innerHTML = `
+        <span class="visually-hidden">Loading...</span>`;
+    return spinner;
+};
 
 export const handleSearch = async () => {
     const searchBar = document.querySelector("input[type='search']");
@@ -80,17 +89,21 @@ export const handleSearch = async () => {
     const selectedMovies = document.querySelector(".selected-movies");
     const parentContainer = document.querySelector(".searched-movies");
     const searchResultTitle = document.querySelector("#search-title");
-    console.log(searchResultTitle);
+
+    const spinner = createSpinner();
+    parentContainer.appendChild(spinner);
 
     const threshold = 5;
     const movies = await getMovies();
     searchBar.addEventListener("submit", (e) => {
         e.preventDefault();
     });
-    searchForm.addEventListener("submit", (e) => {
+    searchForm.addEventListener("submit", async (e) => {
         e.preventDefault();
+
+        spinner.classList.remove("hidden");
+
         const searchInput = searchBar.value.toLowerCase();
-        console.log(searchInput);
         const similarMovies = movies.filter((movie) => {
             const distance = levenshteinDistance(
                 searchInput,
@@ -98,13 +111,16 @@ export const handleSearch = async () => {
             );
             return distance <= threshold;
         });
-        const numReturned = similarMovies.length;
-        console.log(similarMovies);
-        renderMovieCards(similarMovies, searchDisplayContainer);
-        defaultView.classList.add("hide");
-        selectedMovies.classList.add("hide");
-        parentContainer.classList.remove("hide");
-        searchResultTitle.innerHTML = `Found ${numReturned} results for "${searchInput}"`;
-        console.log(searchResultTitle);
+
+        setTimeout(() => {
+            spinner.classList.add("hidden");
+
+            const numReturned = similarMovies.length;
+            renderMovieCards(similarMovies, searchDisplayContainer);
+            defaultView.classList.add("hide");
+            selectedMovies.classList.add("hide");
+            parentContainer.classList.remove("hide");
+            searchResultTitle.innerHTML = `Found ${numReturned} results for "${searchInput}"`;
+        }, 1000);
     });
 };

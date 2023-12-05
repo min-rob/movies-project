@@ -11,6 +11,16 @@ const createContainer = async (genre) => {
     return page;
 };
 
+const createSpinner = () => {
+    const spinner = document.createElement("div");
+    spinner.classList.add("spinner-border", "hidden");
+    spinner.setAttribute("role", "status");
+    spinner.setAttribute("id", "spinner");
+    spinner.innerHTML = `
+        <span class="visually-hidden">Loading...</span>`;
+    return spinner;
+};
+
 const getGenreNameById = async (id) => {
     const genres = await getGenres();
     const foundGenre = genres.find((genre) => genre.id === id);
@@ -19,33 +29,39 @@ const getGenreNameById = async (id) => {
 
 const userSelection = async (e) => {
     const selectionId = e.target.getAttribute("id");
-    // console.log(selectionId);
     const genreName = await getGenreNameById(parseFloat(selectionId));
-    // console.log(genreName);
     const container = await createContainer(genreName);
-    // console.log(selectionId);
-    const genres = await getMovieByGenreId(selectionId);
-    // console.log("Genres by", genreName, genres);
-    const cardContainer = document.querySelector("#card-container");
-    // console.log(cardContainer);
     const parentContainer = document.querySelector(".movies-content");
     const selectedMovies = document.querySelector(".selected-movies");
     const searchedMovies = document.querySelector(".searched-movies");
-
     const defaultView = document.querySelector(".default-movies");
-    if (genres.length === 0) {
-        const noMovies = document.createElement("h2");
-        noMovies.innerText = `No ${genreName} movies found`;
-        container.appendChild(noMovies);
-    }
-    defaultView.classList.add("hide");
-    selectedMovies.classList.remove("hide");
-    searchedMovies.classList.add("hide");
 
-    parentContainer.appendChild(container);
-    renderMovieCards(genres, cardContainer);
+    const spinner = createSpinner();
+    parentContainer.appendChild(spinner);
+
+    spinner.classList.remove("hidden");
+
+    const genres = await getMovieByGenreId(selectionId);
+
+    // Wrap the code in a setTimeout function
+    setTimeout(async () => {
+        spinner.classList.add("hidden");
+
+        const cardContainer = document.querySelector("#card-container");
+
+        if (genres.length === 0) {
+            const noMovies = document.createElement("h2");
+            noMovies.innerText = `No ${genreName} movies found`;
+            container.appendChild(noMovies);
+        }
+        defaultView.classList.add("hide");
+        selectedMovies.classList.remove("hide");
+        searchedMovies.classList.add("hide");
+
+        parentContainer.appendChild(container);
+        renderMovieCards(genres, cardContainer);
+    }, 1000); // Delay of 3 seconds
 };
-
 export const renderGenrePage = () => {
     const categories = document.querySelectorAll("[data-genre]");
     categories.forEach((category) => {
