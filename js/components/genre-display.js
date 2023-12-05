@@ -29,6 +29,9 @@ const userSelection = async (e) => {
     const cardContainer = document.querySelector("#card-container");
     // console.log(cardContainer);
     const parentContainer = document.querySelector(".movies-content");
+    const selectedMovies = document.querySelector(".selected-movies");
+    const searchedMovies = document.querySelector(".searched-movies");
+
     const defaultView = document.querySelector(".default-movies");
     if (genres.length === 0) {
         const noMovies = document.createElement("h2");
@@ -36,6 +39,9 @@ const userSelection = async (e) => {
         container.appendChild(noMovies);
     }
     defaultView.classList.add("hide");
+    selectedMovies.classList.remove("hide");
+    searchedMovies.classList.add("hide");
+
     parentContainer.appendChild(container);
     renderMovieCards(genres, cardContainer);
 };

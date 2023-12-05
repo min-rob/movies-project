@@ -3,6 +3,7 @@ import {
     getGenres,
     getMovieId,
     getMovieBackdrop,
+    getMovieTrailerById,
 } from "../api/movies.js";
 
 const basePath = "./assets/img/movie-backdrop";
@@ -47,6 +48,9 @@ const createFeaturedSlide = (movie) => {
     );
 
     newSlide.innerHTML = `
+                    <div class="trailer-modal-container closed" id="trailer-${id}">
+                        <div id="ytplayer-${id}"></div>
+                    </div>
                     <div class="row flex-grow-1 align-items-center">
                         <div class="col px-0 d-flex flex-column gap-4 lt-info">
                             <h1 class="movie-title">${title}</h1>
@@ -110,7 +114,7 @@ const createFeaturedSlide = (movie) => {
                                     </span>
                                 </button>
                             </div>
-                            <ul class="movie-more-info">
+                            <ul class="movie-more-info" id=movie-${id}>
                         <li>
                             <h3>Synopsis:</h3>
                             <p class="description">
@@ -134,7 +138,65 @@ const createFeaturedSlide = (movie) => {
                     </div>
     `;
 
+    const moreBtn = newSlide.querySelector(".more-btn");
+    moreBtn.addEventListener("click", (e) => {
+        if (newSlide.classList.contains("active")) {
+            const movieInfo = newSlide.querySelector(".movie-more-info");
+            movieInfo.classList.toggle("show");
+        }
+        const img = moreBtn.querySelector("img");
+        img.classList.toggle("clicked");
+        const clicked = img.classList.contains("clicked");
+        if (clicked) {
+            img.setAttribute("src", "./assets/img/icons/remove-icon.svg");
+        } else {
+            img.setAttribute("src", "./assets/img/icons/add-icon.svg");
+        }
+    });
+
     return newSlide;
+};
+
+const ytSlider = (videoID, id) => {
+    const player = new YT.Player(`ytplayer-${id}`, {
+        height: "500",
+        width: "800",
+        videoId: videoID,
+        playerVars: {
+            playsinline: 1,
+            autoplay: 1,
+            loop: 1,
+            mute: 1,
+            controls: 0,
+        },
+        // events: {
+        // 'onReady': onPlayerReady,
+        // 'onStateChange': onPlayerStateChange
+        // }
+    });
+};
+
+export const handleTrailerClick = () => {
+    const slides = document.querySelectorAll(".slide");
+    const trailerBtns = document.querySelectorAll(".trailer-btn");
+    for (let trailerBtn of trailerBtns) {
+        trailerBtn.addEventListener("click", async (e) => {
+            for (let slide of slides) {
+                if (slide.classList.contains("active")) {
+                    const slideID = slide.getAttribute("id");
+                    console.log("slideID related to modal", slideID);
+                    const trailerModal = document.querySelector(
+                        `#trailer-${slideID}`
+                    );
+                    console.log(trailerModal);
+                    trailerModal.classList.toggle("focused");
+                    trailerModal.classList.toggle("closed");
+                    const videoID = await getMovieTrailerById(slideID);
+                    ytSlider(videoID, slideID);
+                }
+            }
+        });
+    }
 };
 
 export const renderMovieSlide = async (movies) => {
@@ -154,7 +216,12 @@ export const handleActiveState = () => {
     target[0].classList.add("active");
     let currentIndex = 0;
 
-    setInterval(() => {
+    const slideInterval = setInterval(() => {
+        for (let slide of target) {
+            if (slide.classList.contains("focused")) {
+                clearInterval(slideInterval);
+            }
+        }
         target[currentIndex].classList.remove("active");
 
         if (currentIndex < target.length - 1) {
@@ -164,7 +231,7 @@ export const handleActiveState = () => {
         }
 
         target[currentIndex].classList.add("active");
-    }, 5000);
+    }, 10000);
 };
 
 export const createPagination = () => {
@@ -191,8 +258,8 @@ export const createPagination = () => {
 
 export const updatePagination = () => {
     const paginationItems = document.querySelectorAll(".pagination span");
-    const slides = document.querySelectorAll(".slide");
     setInterval(() => {
+        const slides = document.querySelectorAll(".slide");
         for (let i = 0; i < slides.length; i++) {
             if (slides[i].classList.contains("active")) {
                 Array.from(paginationItems).forEach((item, index) => {
@@ -219,28 +286,14 @@ export const updatePagination = () => {
     }, 5000);
 };
 
-export const moreInfoClick = () => {
-    const moreInfoBtns = document.querySelectorAll(".more-btn");
-    for (let moreInfoBtn of moreInfoBtns) {
-        moreInfoBtn.addEventListener("click", () => {
-            const movieInfo = document.querySelector(".movie-more-info");
-            movieInfo.classList.toggle("show");
-            const img = moreInfoBtn.querySelector("img");
-            img.classList.toggle("clicked");
-            const clicked = img.classList.contains("clicked");
-            if (clicked) {
-                img.setAttribute("src", "./assets/img/icons/remove-icon.svg");
-            } else {
-                img.setAttribute("src", "./assets/img/icons/add-icon.svg");
-            }
-        });
-    }
-};
-
 export const handlePaginationClick = () => {
     const paginationItems = document.querySelectorAll(".pagination span");
     for (let item of paginationItems) {
         item.addEventListener("click", () => {
+            for (let pagItem of paginationItems) {
+                pagItem.classList.remove("active");
+            }
+            item.classList.add("active");
             const slides = document.querySelectorAll(".slide");
             const slideID = item.getAttribute("id");
             for (let slide of slides) {

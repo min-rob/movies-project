@@ -26,6 +26,22 @@ export const getMovieId = async (search) => {
     }
 };
 
+export const getMovieBySearch = async (search) => {
+    const movies = await getMovies();
+    try {
+        for (let movie of movies) {
+            if (movie.title.toLowerCase().includes(search)) {
+                return movie;
+            }
+        }
+    } catch (error) {
+        return console.log(
+            `error fetching any movies that match ${search}`,
+            error
+        );
+    }
+};
+
 export const getMovieBackdrop = async (id) => {
     const url = `${baseUrl}/movies/${id}`;
     const options = {
@@ -66,4 +82,73 @@ export const getMovieByGenreId = async (id) => {
     }
 
     return moviesWithGenreId;
+};
+
+export const getMovieTrailerById = async (id) => {
+    try {
+        const url = `${baseUrl}/trailers/${id}`;
+        const options = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data.link;
+    } catch (error) {
+        console.log("error fetching trailer =>", error);
+    }
+};
+
+export const addFavorites = async (movie) => {
+    try {
+        const url = `${baseUrl}/favorites`;
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: JSON.stringify(movie),
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error adding favorite =>", error);
+    }
+};
+
+export const removeFavorites = async (id) => {
+    try {
+        const url = `${baseUrl}/favorites/${id}`;
+        const options = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error removing favorite =>", error);
+    }
+};
+
+export const getFavorites = async () => {
+    try {
+        const url = `${baseUrl}/favorites`;
+        const options = {
+            method: "GET",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error fetching favorites =>", error);
+    }
 };

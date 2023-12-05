@@ -1,6 +1,11 @@
-import { getMovies } from "../api/movies.js";
+import {
+    getMovies,
+    addFavorites,
+    removeFavorites,
+    getFavorites,
+} from "../api/movies.js";
 
-export const createMovieCard = (movie) => {
+export const createMovieCard = (movie, isFav) => {
     let { title, release_date, runtime, vote_average, backdrop, id } = movie;
 
     const dateString = movie.release_date;
@@ -52,7 +57,9 @@ export const createMovieCard = (movie) => {
                 <span class="card-favorite"></span>
                     <button class="btn btn-icon">
                         <img
-                            src="./assets/img/icons/heart-filled.svg"
+                            src="./assets/img/icons/heart-${
+                                isFav ? "filled" : "outlined"
+                            }.svg"
                             height="20"
                             width="20"
                         /></button
@@ -61,11 +68,25 @@ export const createMovieCard = (movie) => {
         </div>
     </div>
     `;
+
+    const favoriteBtn = card.querySelector(".btn-icon");
+    favoriteBtn.addEventListener("click", async (e) => {
+        const img = favoriteBtn.querySelector("img");
+        e.preventDefault();
+        if (isFav) {
+            img.setAttribute("src", "./assets/img/icons/heart-filled.svg");
+            console.log(movie);
+            await addFavorites(movie);
+            return movie;
+        } else {
+            img.setAttribute("src", "./assets/img/icons/heart-outlined.svg");
+            const movieId = movie.id;
+            await removeFavorites(movieId);
+        }
+    });
     return card;
 };
 
-//create a function to create and render the divs for each genre
-//then create a function to filter the movies by the genre
 export const moviePopularity = async () => {
     const movies = await getMovies();
     const popularMovies = movies.filter((movie) => movie.popularity > 85);
@@ -78,7 +99,7 @@ export const movieLatest = async () => {
         const dateString = movie.release_date;
         const dateParts = dateString.split("-");
         const year = parseInt(dateParts[2], 10);
-        return year > 2010;
+        return year > 2005;
     });
     return latestMovies;
 };
@@ -91,9 +112,12 @@ export const movieGenre = async (genre) => {
     return genreMovies;
 };
 
-export const renderMovieCards = async (category, container) => {
-    const movies = category;
-    const movieCards = movies.map((movie) => createMovieCard(movie));
+export const renderMovieCards = async (movies, container) => {
+    const favorites = await getFavorites();
+    const movieCards = movies.map((movie) => {
+        const isFav = favorites.some((favorite) => favorite.id === movie.id);
+        return createMovieCard(movie, isFav);
+    });
     const movieContainer = container;
     movieContainer.innerHTML = "";
     movieContainer.append(...movieCards);

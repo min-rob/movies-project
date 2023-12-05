@@ -39,14 +39,19 @@ nav ul {
 }
 .hidden {
     opacity: 0;
+    display: none;
 }
 
 .trailer-btn {
     background-color: var(--color-primary);
 }
 
+.btn-primary {
+    background-color: var(--color-primary);
+}
+
 .page-wrapper {
-    height: 100dvh;
+    min-height: 100dvh;
     display: flex;
     flex-direction: column;
 }
@@ -176,11 +181,17 @@ nav ul {
     left: 50%;
     transform: translate(-50%, -50%);
     min-width: 200px;
-    max-width: 200px;
+    max-width: 500px;
     padding: 10px;
     border-radius: 10px;
     background-color: var(--color-primary);
     transition: all ease 0.3s;
+}
+
+.search-btn input {
+    border-radius: 10px;
+    padding-left: 8px;
+    border-color: transparent;
 }
 
 .movie-card {
@@ -224,7 +235,32 @@ nav ul {
 
 .featured-movies {
     margin-top: 48px;
-    overflow-x: scroll;
+    overflow-x: auto;
+}
+
+.favorite-movies {
+    margin-top: 48px;
+    overflow-x: auto;
+}
+
+.featured-movies h2 {
+    margin-bottom: 24px;
+}
+
+.latest-movies {
+    overflow-x: auto;
+}
+.latest-movies h2 {
+    margin-bottom: 24px;
+}
+
+.selected-movies {
+    margin-top: 48px;
+    overflow-x: auto;
+}
+
+.searched-movies {
+    margin-top: 48px;
 }
 
 .btn-icon {
@@ -245,7 +281,7 @@ nav ul {
     flex-direction: column;
     gap: 8px;
     flex-wrap: wrap;
-    position: absolute;
+    position: fixed;
     bottom: 1%;
     left: 50%;
     transform: translate(-50%, -50%);
@@ -292,4 +328,16 @@ nav ul {
 }
 .search-btn {
     cursor: pointer;
+    transition: all ease-in 0.3s;
+}
+
+.trailer-modal-container {
+    position: absolute;
+    padding: 10px;
+    left: 45%;
+    bottom: 30%;
+    z-index: 4;
+}
+.closed {
+    display: none;
 }

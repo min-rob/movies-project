@@ -12,22 +12,30 @@
                 <header class="container-fluid header">
                     <nav class="row">
                         <div
-                            class="col-3 d-flex flex-column justify-content-center p-0"
+                            class="col-4 d-flex flex-column justify-content-center p-0"
                             id="nav-lt"
                         >
                             <h2 class="logo-title">WatchThis</h2>
                         </div>
-                        <div class="col-6 p-0" id="nav-center"></div>
+                        <div class="col-4 p-0" id="nav-center"></div>
                         <div
-                            class="col-3 p-0 d-flex justify-content-end"
+                            class="col-4 p-0 d-flex justify-content-end"
                             id="nav-rt"
                         >
-                            <ul>
+                            <ul
+                                class="d-flex justify-content-center align-items-center"
+                                id="nav-items"
+                            >
                                 <li>
                                     <a href="/">Search</a>
                                 </li>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/">Movies</a></li>
+                                <li>
+                                    <button class="btn btn-primary">
+                                        Add movie
+                                    </button>
+                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -45,6 +53,12 @@
                 <div class="container-fluid movies-list">
                     <div class="row section-two movies-content">
                         <div class="default-movies" data-page>
+                            <div class="favorite-movies">
+                                <h2>Favorite Movies:</h2>
+                                <div
+                                    class="favorite-movie-container d-flex gap-4"
+                                ></div>
+                            </div>
                             <div class="featured-movies">
                                 <h2>Featured Movies:</h2>
                                 <div
@@ -58,7 +72,11 @@
                                 ></div>
                             </div>
                         </div>
-                        <div class="selected-movies" data-page></div>
+                        <div class="selected-movies hide" data-page></div>
+                        <div class="searched-movies hide" data-page>
+                            <h2 id="search-title"></h2>
+                            <div id="movies"></div>
+                        </div>
                     </div>
                     <div class="bottom-menu-bar">
                         <div class="genre-list hide">
@@ -66,22 +84,40 @@
                             <div class="genres" id="genre-container"></div>
                         </div>
                         <div
-                            class="button-container d-flex justify-content-center gap-5"
+                            class="button-container d-flex justify-content-center gap-5 hidden"
                         >
                             <div class="app-btn">
-                                <img src="./assets/img/icons/apps-icon.svg" />
+                                <img
+                                    src="./assets/img/icons/apps-icon.svg"
+                                    id="app"
+                                />
                             </div>
                             <div class="home-btn">
-                                <img src="./assets/img/icons/home-icon.svg" />
+                                <img
+                                    src="./assets/img/icons/home-icon.svg"
+                                    id="home"
+                                />
                             </div>
-                            <div class="search-btn">
-                                <img src="./assets/img/icons/search-icon.svg" />
+                            <div
+                                class="search-btn d-flex align-items-center gap-3"
+                            >
+                                <img
+                                    src="./assets/img/icons/search-icon.svg"
+                                    id="search"
+                                />
+                                <form class="search-form hidden">
+                                    <input
+                                        type="search"
+                                        placeholder="..search movies"
+                                    />
+                                </form>
                             </div>
                         </div>
                     </div>
                 </div>
             </div>
         </section>
+        <script src="https://www.youtube.com/s/player/31e0b6d9/www-widgetapi.vflset/www-widgetapi.js"></script>
         <script type="module" src="./js/main.js"></script>
     </body>
 </html>
