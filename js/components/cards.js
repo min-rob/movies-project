@@ -67,44 +67,49 @@ export const createMovieCard = (movie, isFav) => {
                     ${vote_average}</span
                 >
                 <span class="card-favorite">
-                <button class="btn btn-icon">
+                    <button class="btn btn-icon" id="fav-btn">
                         <img
                             src="./assets/img/icons/heart-${
                                 isFav ? "filled" : "outlined"
                             }.svg"
                             height="20"
                             width="20"
-                        /></button</span>
-                    <span class="card-trash">
-                    <button class="btn btn-icon-trash">
+                        />
+                    </button>
+                </span>
+                <span class="card-trash">
+                    <button class="btn btn-icon" id="trash-btn">
                         <img
                             src="./assets/img/icons/trash-icon.svg"
                             height="20"
                             width="20"
-                        /></button
-                ></span>
+                        />
+                    </button></span>
             </div>
         </div>
     </div>
     `;
 
-    const favoriteBtn = card.querySelector(".btn-icon");
+    const favoriteBtn = card.querySelector("#fav-btn");
     favoriteBtn.addEventListener("click", async (e) => {
         const img = favoriteBtn.querySelector("img");
         e.preventDefault();
-        if (isFav) {
+        console.log(isFav);
+        if (!isFav) {
+            console.log("fav = false");
             img.setAttribute("src", "./assets/img/icons/heart-filled.svg");
             console.log(movie);
             await addFavorites(movie);
             return movie;
         } else {
+            console.log("fav = true");
             img.setAttribute("src", "./assets/img/icons/heart-outlined.svg");
             const movieId = movie.id;
             await removeFavorites(movieId);
         }
     });
 
-    const trashBtn = card.querySelector(".btn-icon-trash");
+    const trashBtn = card.querySelector("#trash-btn");
     trashBtn.addEventListener("click", async (e) => {
         e.preventDefault();
         const movieId = movie.id;
