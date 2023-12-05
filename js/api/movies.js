@@ -26,6 +26,19 @@ export const getMovieId = async (search) => {
     }
 };
 
+export const getMovieById = async (id) => {
+    const movies = await getMovies();
+    try {
+        for (let movie of movies) {
+            if (movie.id === id) {
+                return movie;
+            }
+        }
+    } catch (error) {
+        return console.log("error fetching movie ID =>", error);
+    }
+};
+
 export const getMovieBySearch = async (search) => {
     const movies = await getMovies();
     try {
@@ -150,5 +163,82 @@ export const getFavorites = async () => {
         return data;
     } catch (error) {
         console.log("error fetching favorites =>", error);
+    }
+};
+
+export const addMovie = async (
+    title,
+    genres,
+    description,
+    release_date,
+    runtime,
+    cast,
+    director
+) => {
+    const newMovies = {
+        title,
+        genre,
+        description,
+        release_date,
+        runtime,
+        cast,
+        director,
+    };
+    genre = [];
+    const body = JSON.stringify(newMovies);
+
+    try {
+        const url = `${baseUrl}/movies`;
+        const options = {
+            method: "POST",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: body,
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error adding movie =>", error);
+    }
+};
+
+export const deleteMovie = async (id) => {
+    try {
+        const url = `${baseUrl}/movies/${id}`;
+        const options = {
+            method: "DELETE",
+            headers: {
+                "Content-Type": "application/json",
+            },
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error deleting movie =>", error);
+    }
+};
+
+export const updateMovie = async (movie) => {
+    const newMovie = {
+        ...movie,
+    };
+    const body = JSON.stringify(newMovie);
+    try {
+        const url = `${baseUrl}/movies/${movie.id}`;
+        const options = {
+            method: "PATCH",
+            headers: {
+                "Content-Type": "application/json",
+            },
+            body: body,
+        };
+        const response = await fetch(url, options);
+        const data = await response.json();
+        return data;
+    } catch (error) {
+        console.log("error updating movie =>", error);
     }
 };

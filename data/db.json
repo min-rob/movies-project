@@ -1,771 +1,771 @@
 {
-  "movies": [
-    {
-      "id": 1,
-      "title": "Inception",
-      "description": "A thief who enters the subconscious minds of others to steal their secrets.",
-      "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-      "director": "Christopher Nolan",
-      "genres": [
+    "movies": [
         {
-          "id": 28,
-          "name": "Action"
+            "id": 1,
+            "title": "Inception",
+            "description": "A thief who enters the subconscious minds of others to steal their secrets.",
+            "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
+            "director": "Christopher Nolan",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                },
+                {
+                    "id": 9648,
+                    "name": "Mystery"
+                }
+            ],
+            "popularity": 87,
+            "release_date": "07-16-2010",
+            "runtime": 148,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Japanese",
+                    "iso_639_1": "ja",
+                    "name": "日本語"
+                },
+                {
+                    "english_name": "French",
+                    "iso_639_1": "fr",
+                    "name": "Français"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.8,
+            "vote_count": 29282,
+            "backdrop": "/Inception.jpg",
+            "favorite": false
         },
         {
-          "id": 878,
-          "name": "Science Fiction"
+            "id": 2,
+            "title": "The Dark Knight",
+            "description": "Batman faces a psychopathic criminal known as the Joker.",
+            "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
+            "director": "Robert Owens",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 80,
+                    "name": "Crime"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                }
+            ],
+            "popularity": 90,
+            "release_date": "07-18-2008",
+            "runtime": 152,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 9,
+            "vote_count": 26122,
+            "backdrop": "/The-Dark-Knight.jpg",
+            "favorite": false
         },
         {
-          "id": 9648,
-          "name": "Mystery"
+            "id": 3,
+            "title": "The Shawshank Redemption",
+            "description": "Two imprisoned men bond over several years, finding solace and eventual redemption through acts of common decency.",
+            "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
+            "director": "Frank Darabont",
+            "genres": [
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 80,
+                    "name": "Crime"
+                }
+            ],
+            "popularity": 85,
+            "release_date": "09-23-1994",
+            "runtime": 142,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.7,
+            "vote_count": 20253,
+            "backdrop": "/The-Shawshank-Redemption.jpg",
+            "favorite": false
+        },
+        {
+            "id": 4,
+            "title": "The Godfather",
+            "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            "cast": "Marlon Brando, Al Pacino, James Caan",
+            "director": "Francis Ford Coppola",
+            "genres": [
+                {
+                    "id": 80,
+                    "name": "Crime"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                }
+            ],
+            "popularity": 88,
+            "release_date": "03-24-1972",
+            "runtime": 175,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Italian",
+                    "iso_639_1": "it",
+                    "name": "Italiano"
+                },
+                {
+                    "english_name": "Latin",
+                    "iso_639_1": "la",
+                    "name": "Latin"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.7,
+            "vote_count": 15241,
+            "backdrop": "/The-Godfather.jpg",
+            "favorite": false
+        },
+        {
+            "id": 5,
+            "title": "Pulp Fiction",
+            "description": "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.",
+            "cast": "John Travolta, Uma Thurman, Samuel L. Jackson",
+            "director": "Quentin Tarantino",
+            "genres": [
+                {
+                    "id": 53,
+                    "name": "Thriller"
+                },
+                {
+                    "id": 80,
+                    "name": "Crime"
+                }
+            ],
+            "popularity": 86,
+            "release_date": "10-14-1994",
+            "runtime": 154,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Spanish",
+                    "iso_639_1": "es",
+                    "name": "Español"
+                },
+                {
+                    "english_name": "French",
+                    "iso_639_1": "fr",
+                    "name": "Français"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.5,
+            "vote_count": 22248,
+            "backdrop": "/Pulp-Fiction.jpg",
+            "favorite": false
+        },
+        {
+            "id": 6,
+            "title": "The Matrix",
+            "description": "A computer hacker learns about the true nature of reality and his role in the war against its controllers.",
+            "cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
+            "director": "The Wachowskis",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                }
+            ],
+            "popularity": 85,
+            "release_date": "03-31-1999",
+            "runtime": 136,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.7,
+            "vote_count": 18883,
+            "backdrop": "/The-Matrix.jpg",
+            "favorite": false
+        },
+        {
+            "id": 7,
+            "title": "Forrest Gump",
+            "description": "A man with a low IQ embarks on an extraordinary journey through life.",
+            "cast": "Tom Hanks, Robin Wright, Gary Sinise",
+            "director": "Robert Zemeckis",
+            "genres": [
+                {
+                    "id": 35,
+                    "name": "Comedy"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 10749,
+                    "name": "Romance"
+                }
+            ],
+            "popularity": 84,
+            "release_date": "07-06-1994",
+            "runtime": 142,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.8,
+            "vote_count": 20222,
+            "backdrop": "/Forrest-Gump.jpg",
+            "favorite": false
+        },
+        {
+            "id": 8,
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "description": "A young hobbit, Frodo, who has found the One Ring, begins his journey with eight companions to destroy it in the fires of Mount Doom.",
+            "cast": "Elijah Wood, Ian McKellen, Viggo Mortensen",
+            "director": "Peter Jackson",
+            "genres": [
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy"
+                }
+            ],
+            "popularity": 89,
+            "release_date": "12-19-2001",
+            "runtime": 178,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.8,
+            "vote_count": 18823,
+            "backdrop": "/LOTR.png",
+            "favorite": false
+        },
+        {
+            "id": 9,
+            "title": "Inglourious Basterds",
+            "description": "In Nazi-occupied France, a group of Jewish-American soldiers known as 'The Basterds' are chosen to spread fear throughout the Third Reich by scalping and brutally killing Nazis.",
+            "cast": "Brad Pitt, Diane Kruger, Christoph Waltz",
+            "director": "Quentin Tarantino",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 36,
+                    "name": "History"
+                }
+            ],
+            "popularity": 82,
+            "release_date": "08-21-2009",
+            "runtime": 153,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "German",
+                    "iso_639_1": "de",
+                    "name": "Deutsch"
+                },
+                {
+                    "english_name": "French",
+                    "iso_639_1": "fr",
+                    "name": "Français"
+                },
+                {
+                    "english_name": "Italian",
+                    "iso_639_1": "it",
+                    "name": "Italiano"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.3,
+            "vote_count": 15167,
+            "backdrop": "/Inglourious-Basterds.jpg",
+            "favorite": false
+        },
+        {
+            "id": 10,
+            "title": "The Silence of the Lambs",
+            "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
+            "cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney",
+            "director": "Jonathan Demme",
+            "genres": [
+                {
+                    "id": 80,
+                    "name": "Crime"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 53,
+                    "name": "Thriller"
+                }
+            ],
+            "popularity": 80,
+            "release_date": "02-14-1991",
+            "runtime": 118,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.6,
+            "vote_count": 10615,
+            "backdrop": "/The-Silence-of-the-Lambs.jpg",
+            "favorite": false
+        },
+        {
+            "id": 11,
+            "title": "The Avengers",
+            "description": "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
+            "cast": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
+            "director": "Joss Whedon",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                }
+            ],
+            "popularity": 87,
+            "release_date": "05-04-2012",
+            "runtime": 143,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Russian",
+                    "iso_639_1": "ru",
+                    "name": "Pусский"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8,
+            "vote_count": 24924,
+            "backdrop": "/The-Avengers.jpg",
+            "favorite": false
+        },
+        {
+            "id": 12,
+            "title": "Interstellar",
+            "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
+            "cast": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
+            "director": "Christopher Nolan",
+            "genres": [
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                }
+            ],
+            "popularity": 88,
+            "release_date": "11-07-2014",
+            "runtime": 169,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.6,
+            "vote_count": 25901,
+            "backdrop": "/Interstellar.jpg",
+            "favorite": false
         }
-      ],
-      "popularity": 87,
-      "release_date": "07-16-2010",
-      "runtime": 148,
-      "spoken_languages": [
+    ],
+    "genres": [
         {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
+            "id": 28,
+            "name": "Action"
         },
         {
-          "english_name": "Japanese",
-          "iso_639_1": "ja",
-          "name": "日本語"
+            "id": 12,
+            "name": "Adventure"
         },
         {
-          "english_name": "French",
-          "iso_639_1": "fr",
-          "name": "Français"
+            "id": 16,
+            "name": "Animation"
+        },
+        {
+            "id": 35,
+            "name": "Comedy"
+        },
+        {
+            "id": 80,
+            "name": "Crime"
+        },
+        {
+            "id": 99,
+            "name": "Documentary"
+        },
+        {
+            "id": 18,
+            "name": "Drama"
+        },
+        {
+            "id": 10751,
+            "name": "Family"
+        },
+        {
+            "id": 14,
+            "name": "Fantasy"
+        },
+        {
+            "id": 36,
+            "name": "History"
+        },
+        {
+            "id": 27,
+            "name": "Horror"
+        },
+        {
+            "id": 10402,
+            "name": "Music"
+        },
+        {
+            "id": 9648,
+            "name": "Mystery"
+        },
+        {
+            "id": 10749,
+            "name": "Romance"
+        },
+        {
+            "id": 878,
+            "name": "Science Fiction"
+        },
+        {
+            "id": 53,
+            "name": "Thriller"
+        },
+        {
+            "id": 10752,
+            "name": "War"
+        },
+        {
+            "id": 37,
+            "name": "Western"
         }
-      ],
-      "status": "Released",
-      "vote_average": 8.8,
-      "vote_count": 29282,
-      "backdrop": "/Inception.jpg",
-      "favorite": false
-    },
-    {
-      "id": 2,
-      "title": "The Dark Knight",
-      "description": "Batman faces a psychopathic criminal known as the Joker.",
-      "cast": "Christian Bale, Heath Ledger, Aaron Eckhart",
-      "director": "Christopher Nolan",
-      "genres": [
+    ],
+    "users": [
         {
-          "id": 28,
-          "name": "Action"
+            "id": 1,
+            "username": "admin",
+            "password": "password",
+            "role": "admin",
+            "favorites": []
         },
         {
-          "id": 80,
-          "name": "Crime"
+            "id": 2,
+            "username": "user1",
+            "password": "password",
+            "role": "user",
+            "favorites": []
         },
         {
-          "id": 18,
-          "name": "Drama"
+            "id": 3,
+            "username": "user2",
+            "password": "password",
+            "role": "user",
+            "favorites": []
         }
-      ],
-      "popularity": 90,
-      "release_date": "07-18-2008",
-      "runtime": 152,
-      "spoken_languages": [
+    ],
+    "trailers": [
         {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
+            "id": 1,
+            "link": "YoHD9XEInc0"
+        },
+        {
+            "id": 2,
+            "link": "EXeTwQWrcwY"
+        },
+        {
+            "id": 3,
+            "link": "PLl99DlL6b4"
+        },
+        {
+            "id": 4,
+            "link": "UaVTIH8mujA"
+        },
+        {
+            "id": 5,
+            "link": "s7EdQ4FqbhY"
+        },
+        {
+            "id": 6,
+            "link": "vKQi3bBA1y8"
+        },
+        {
+            "id": 7,
+            "link": "bLvqoHBptjg"
+        },
+        {
+            "id": 8,
+            "link": "V75dMMIW2B4"
+        },
+        {
+            "id": 9,
+            "link": "KnrRy6kSFF0"
+        },
+        {
+            "id": 10,
+            "link": "6iB21hsprAQ"
+        },
+        {
+            "id": 11,
+            "link": "eOrNdBpGMv8"
+        },
+        {
+            "id": 12,
+            "link": "2LqzF5WauAw"
         }
-      ],
-      "status": "Released",
-      "vote_average": 9,
-      "vote_count": 26122,
-      "backdrop": "/The-Dark-Knight.jpg",
-      "favorite": false
-    },
-    {
-      "id": 3,
-      "title": "The Shawshank Redemption",
-      "description": "Two imprisoned men bond over several years, finding solace and eventual redemption through acts of common decency.",
-      "cast": "Tim Robbins, Morgan Freeman, Bob Gunton",
-      "director": "Frank Darabont",
-      "genres": [
+    ],
+    "favorites": [
         {
-          "id": 18,
-          "name": "Drama"
+            "id": 1,
+            "title": "Inception",
+            "description": "A thief who enters the subconscious minds of others to steal their secrets.",
+            "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
+            "director": "Christopher Nolan",
+            "genres": [
+                {
+                    "id": 28,
+                    "name": "Action"
+                },
+                {
+                    "id": 878,
+                    "name": "Science Fiction"
+                },
+                {
+                    "id": 9648,
+                    "name": "Mystery"
+                }
+            ],
+            "popularity": 87,
+            "release_date": "07-16-2010",
+            "runtime": 148,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Japanese",
+                    "iso_639_1": "ja",
+                    "name": "日本語"
+                },
+                {
+                    "english_name": "French",
+                    "iso_639_1": "fr",
+                    "name": "Français"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.8,
+            "vote_count": 29282,
+            "backdrop": "/Inception.jpg",
+            "favorite": false
         },
         {
-          "id": 80,
-          "name": "Crime"
+            "id": 10,
+            "title": "The Silence of the Lambs",
+            "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
+            "cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney",
+            "director": "Jonathan Demme",
+            "genres": [
+                {
+                    "id": 80,
+                    "name": "Crime"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                },
+                {
+                    "id": 53,
+                    "name": "Thriller"
+                }
+            ],
+            "popularity": 80,
+            "release_date": "02-14-1991",
+            "runtime": 118,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.6,
+            "vote_count": 10615,
+            "backdrop": "/The-Silence-of-the-Lambs.jpg",
+            "favorite": false
+        },
+        {
+            "id": 4,
+            "title": "The Godfather",
+            "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
+            "cast": "Marlon Brando, Al Pacino, James Caan",
+            "director": "Francis Ford Coppola",
+            "genres": [
+                {
+                    "id": 80,
+                    "name": "Crime"
+                },
+                {
+                    "id": 18,
+                    "name": "Drama"
+                }
+            ],
+            "popularity": 88,
+            "release_date": "03-24-1972",
+            "runtime": 175,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                },
+                {
+                    "english_name": "Italian",
+                    "iso_639_1": "it",
+                    "name": "Italiano"
+                },
+                {
+                    "english_name": "Latin",
+                    "iso_639_1": "la",
+                    "name": "Latin"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.7,
+            "vote_count": 15241,
+            "backdrop": "/The-Godfather.jpg",
+            "favorite": false
+        },
+        {
+            "id": 8,
+            "title": "The Lord of the Rings: The Fellowship of the Ring",
+            "description": "A young hobbit, Frodo, who has found the One Ring, begins his journey with eight companions to destroy it in the fires of Mount Doom.",
+            "cast": "Elijah Wood, Ian McKellen, Viggo Mortensen",
+            "director": "Peter Jackson",
+            "genres": [
+                {
+                    "id": 12,
+                    "name": "Adventure"
+                },
+                {
+                    "id": 14,
+                    "name": "Fantasy"
+                }
+            ],
+            "popularity": 89,
+            "release_date": "12-19-2001",
+            "runtime": 178,
+            "spoken_languages": [
+                {
+                    "english_name": "English",
+                    "iso_639_1": "en",
+                    "name": "English"
+                }
+            ],
+            "status": "Released",
+            "vote_average": 8.8,
+            "vote_count": 18823,
+            "backdrop": "/LOTR.png",
+            "favorite": false
         }
-      ],
-      "popularity": 85,
-      "release_date": "09-23-1994",
-      "runtime": 142,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.7,
-      "vote_count": 20253,
-      "backdrop": "/The-Shawshank-Redemption.jpg",
-      "favorite": false
-    },
-    {
-      "id": 4,
-      "title": "The Godfather",
-      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-      "cast": "Marlon Brando, Al Pacino, James Caan",
-      "director": "Francis Ford Coppola",
-      "genres": [
-        {
-          "id": 80,
-          "name": "Crime"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        }
-      ],
-      "popularity": 88,
-      "release_date": "03-24-1972",
-      "runtime": 175,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Italian",
-          "iso_639_1": "it",
-          "name": "Italiano"
-        },
-        {
-          "english_name": "Latin",
-          "iso_639_1": "la",
-          "name": "Latin"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.7,
-      "vote_count": 15241,
-      "backdrop": "/The-Godfather.jpg",
-      "favorite": false
-    },
-    {
-      "id": 5,
-      "title": "Pulp Fiction",
-      "description": "The lives of two mob hitmen, a boxer, a gangster and his wife intertwine in four tales of violence and redemption.",
-      "cast": "John Travolta, Uma Thurman, Samuel L. Jackson",
-      "director": "Quentin Tarantino",
-      "genres": [
-        {
-          "id": 53,
-          "name": "Thriller"
-        },
-        {
-          "id": 80,
-          "name": "Crime"
-        }
-      ],
-      "popularity": 86,
-      "release_date": "10-14-1994",
-      "runtime": 154,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Spanish",
-          "iso_639_1": "es",
-          "name": "Español"
-        },
-        {
-          "english_name": "French",
-          "iso_639_1": "fr",
-          "name": "Français"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.5,
-      "vote_count": 22248,
-      "backdrop": "/Pulp-Fiction.jpg",
-      "favorite": false
-    },
-    {
-      "id": 6,
-      "title": "The Matrix",
-      "description": "A computer hacker learns about the true nature of reality and his role in the war against its controllers.",
-      "cast": "Keanu Reeves, Laurence Fishburne, Carrie-Anne Moss",
-      "director": "The Wachowskis",
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 878,
-          "name": "Science Fiction"
-        }
-      ],
-      "popularity": 85,
-      "release_date": "03-31-1999",
-      "runtime": 136,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.7,
-      "vote_count": 18883,
-      "backdrop": "/The-Matrix.jpg",
-      "favorite": false
-    },
-    {
-      "id": 7,
-      "title": "Forrest Gump",
-      "description": "A man with a low IQ embarks on an extraordinary journey through life.",
-      "cast": "Tom Hanks, Robin Wright, Gary Sinise",
-      "director": "Robert Zemeckis",
-      "genres": [
-        {
-          "id": 35,
-          "name": "Comedy"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 10749,
-          "name": "Romance"
-        }
-      ],
-      "popularity": 84,
-      "release_date": "07-06-1994",
-      "runtime": 142,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.8,
-      "vote_count": 20222,
-      "backdrop": "/Forrest-Gump.jpg",
-      "favorite": false
-    },
-    {
-      "id": 8,
-      "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "description": "A young hobbit, Frodo, who has found the One Ring, begins his journey with eight companions to destroy it in the fires of Mount Doom.",
-      "cast": "Elijah Wood, Ian McKellen, Viggo Mortensen",
-      "director": "Peter Jackson",
-      "genres": [
-        {
-          "id": 12,
-          "name": "Adventure"
-        },
-        {
-          "id": 14,
-          "name": "Fantasy"
-        }
-      ],
-      "popularity": 89,
-      "release_date": "12-19-2001",
-      "runtime": 178,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.8,
-      "vote_count": 18823,
-      "backdrop": "/LOTR.png",
-      "favorite": false
-    },
-    {
-      "id": 9,
-      "title": "Inglourious Basterds",
-      "description": "In Nazi-occupied France, a group of Jewish-American soldiers known as 'The Basterds' are chosen to spread fear throughout the Third Reich by scalping and brutally killing Nazis.",
-      "cast": "Brad Pitt, Diane Kruger, Christoph Waltz",
-      "director": "Quentin Tarantino",
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 36,
-          "name": "History"
-        }
-      ],
-      "popularity": 82,
-      "release_date": "08-21-2009",
-      "runtime": 153,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "German",
-          "iso_639_1": "de",
-          "name": "Deutsch"
-        },
-        {
-          "english_name": "French",
-          "iso_639_1": "fr",
-          "name": "Français"
-        },
-        {
-          "english_name": "Italian",
-          "iso_639_1": "it",
-          "name": "Italiano"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.3,
-      "vote_count": 15167,
-      "backdrop": "/Inglourious-Basterds.jpg",
-      "favorite": false
-    },
-    {
-      "id": 10,
-      "title": "The Silence of the Lambs",
-      "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
-      "cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney",
-      "director": "Jonathan Demme",
-      "genres": [
-        {
-          "id": 80,
-          "name": "Crime"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 53,
-          "name": "Thriller"
-        }
-      ],
-      "popularity": 80,
-      "release_date": "02-14-1991",
-      "runtime": 118,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.6,
-      "vote_count": 10615,
-      "backdrop": "/The-Silence-of-the-Lambs.jpg",
-      "favorite": false
-    },
-    {
-      "id": 11,
-      "title": "The Avengers",
-      "description": "Earth's mightiest heroes must come together and learn to fight as a team if they are to stop the mischievous Loki and his alien army from enslaving humanity.",
-      "cast": "Robert Downey Jr., Chris Evans, Scarlett Johansson",
-      "director": "Joss Whedon",
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 12,
-          "name": "Adventure"
-        },
-        {
-          "id": 878,
-          "name": "Science Fiction"
-        }
-      ],
-      "popularity": 87,
-      "release_date": "05-04-2012",
-      "runtime": 143,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Russian",
-          "iso_639_1": "ru",
-          "name": "Pусский"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8,
-      "vote_count": 24924,
-      "backdrop": "/The-Avengers.jpg",
-      "favorite": false
-    },
-    {
-      "id": 12,
-      "title": "Interstellar",
-      "description": "A team of explorers travel through a wormhole in space in an attempt to ensure humanity's survival.",
-      "cast": "Matthew McConaughey, Anne Hathaway, Jessica Chastain",
-      "director": "Christopher Nolan",
-      "genres": [
-        {
-          "id": 12,
-          "name": "Adventure"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 878,
-          "name": "Science Fiction"
-        }
-      ],
-      "popularity": 88,
-      "release_date": "11-07-2014",
-      "runtime": 169,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.6,
-      "vote_count": 25901,
-      "backdrop": "/Interstellar.jpg",
-      "favorite": false
-    }
-  ],
-  "genres": [
-    {
-      "id": 28,
-      "name": "Action"
-    },
-    {
-      "id": 12,
-      "name": "Adventure"
-    },
-    {
-      "id": 16,
-      "name": "Animation"
-    },
-    {
-      "id": 35,
-      "name": "Comedy"
-    },
-    {
-      "id": 80,
-      "name": "Crime"
-    },
-    {
-      "id": 99,
-      "name": "Documentary"
-    },
-    {
-      "id": 18,
-      "name": "Drama"
-    },
-    {
-      "id": 10751,
-      "name": "Family"
-    },
-    {
-      "id": 14,
-      "name": "Fantasy"
-    },
-    {
-      "id": 36,
-      "name": "History"
-    },
-    {
-      "id": 27,
-      "name": "Horror"
-    },
-    {
-      "id": 10402,
-      "name": "Music"
-    },
-    {
-      "id": 9648,
-      "name": "Mystery"
-    },
-    {
-      "id": 10749,
-      "name": "Romance"
-    },
-    {
-      "id": 878,
-      "name": "Science Fiction"
-    },
-    {
-      "id": 53,
-      "name": "Thriller"
-    },
-    {
-      "id": 10752,
-      "name": "War"
-    },
-    {
-      "id": 37,
-      "name": "Western"
-    }
-  ],
-  "users": [
-    {
-      "id": 1,
-      "username": "admin",
-      "password": "password",
-      "role": "admin",
-      "favorites": []
-    },
-    {
-      "id": 2,
-      "username": "user1",
-      "password": "password",
-      "role": "user",
-      "favorites": []
-    },
-    {
-      "id": 3,
-      "username": "user2",
-      "password": "password",
-      "role": "user",
-      "favorites": []
-    }
-  ],
-  "trailers": [
-    {
-      "id": 1,
-      "link": "YoHD9XEInc0"
-    },
-    {
-      "id": 2,
-      "link": "EXeTwQWrcwY"
-    },
-    {
-      "id": 3,
-      "link": "PLl99DlL6b4"
-    },
-    {
-      "id": 4,
-      "link": "UaVTIH8mujA"
-    },
-    {
-      "id": 5,
-      "link": "s7EdQ4FqbhY"
-    },
-    {
-      "id": 6,
-      "link": "vKQi3bBA1y8"
-    },
-    {
-      "id": 7,
-      "link": "bLvqoHBptjg"
-    },
-    {
-      "id": 8,
-      "link": "V75dMMIW2B4"
-    },
-    {
-      "id": 9,
-      "link": "KnrRy6kSFF0"
-    },
-    {
-      "id": 10,
-      "link": "6iB21hsprAQ"
-    },
-    {
-      "id": 11,
-      "link": "eOrNdBpGMv8"
-    },
-    {
-      "id": 12,
-      "link": "2LqzF5WauAw"
-    }
-  ],
-  "favorites": [
-    {
-      "id": 1,
-      "title": "Inception",
-      "description": "A thief who enters the subconscious minds of others to steal their secrets.",
-      "cast": "Leonardo DiCaprio, Joseph Gordon-Levitt, Ellen Page",
-      "director": "Christopher Nolan",
-      "genres": [
-        {
-          "id": 28,
-          "name": "Action"
-        },
-        {
-          "id": 878,
-          "name": "Science Fiction"
-        },
-        {
-          "id": 9648,
-          "name": "Mystery"
-        }
-      ],
-      "popularity": 87,
-      "release_date": "07-16-2010",
-      "runtime": 148,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Japanese",
-          "iso_639_1": "ja",
-          "name": "日本語"
-        },
-        {
-          "english_name": "French",
-          "iso_639_1": "fr",
-          "name": "Français"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.8,
-      "vote_count": 29282,
-      "backdrop": "/Inception.jpg",
-      "favorite": false
-    },
-    {
-      "id": 10,
-      "title": "The Silence of the Lambs",
-      "description": "A young F.B.I. cadet must receive the help of an incarcerated and manipulative cannibal killer to help catch another serial killer, a madman who skins his victims.",
-      "cast": "Jodie Foster, Anthony Hopkins, Lawrence A. Bonney",
-      "director": "Jonathan Demme",
-      "genres": [
-        {
-          "id": 80,
-          "name": "Crime"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        },
-        {
-          "id": 53,
-          "name": "Thriller"
-        }
-      ],
-      "popularity": 80,
-      "release_date": "02-14-1991",
-      "runtime": 118,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.6,
-      "vote_count": 10615,
-      "backdrop": "/The-Silence-of-the-Lambs.jpg",
-      "favorite": false
-    },
-    {
-      "id": 4,
-      "title": "The Godfather",
-      "description": "The aging patriarch of an organized crime dynasty transfers control of his clandestine empire to his reluctant son.",
-      "cast": "Marlon Brando, Al Pacino, James Caan",
-      "director": "Francis Ford Coppola",
-      "genres": [
-        {
-          "id": 80,
-          "name": "Crime"
-        },
-        {
-          "id": 18,
-          "name": "Drama"
-        }
-      ],
-      "popularity": 88,
-      "release_date": "03-24-1972",
-      "runtime": 175,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        },
-        {
-          "english_name": "Italian",
-          "iso_639_1": "it",
-          "name": "Italiano"
-        },
-        {
-          "english_name": "Latin",
-          "iso_639_1": "la",
-          "name": "Latin"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.7,
-      "vote_count": 15241,
-      "backdrop": "/The-Godfather.jpg",
-      "favorite": false
-    },
-    {
-      "id": 8,
-      "title": "The Lord of the Rings: The Fellowship of the Ring",
-      "description": "A young hobbit, Frodo, who has found the One Ring, begins his journey with eight companions to destroy it in the fires of Mount Doom.",
-      "cast": "Elijah Wood, Ian McKellen, Viggo Mortensen",
-      "director": "Peter Jackson",
-      "genres": [
-        {
-          "id": 12,
-          "name": "Adventure"
-        },
-        {
-          "id": 14,
-          "name": "Fantasy"
-        }
-      ],
-      "popularity": 89,
-      "release_date": "12-19-2001",
-      "runtime": 178,
-      "spoken_languages": [
-        {
-          "english_name": "English",
-          "iso_639_1": "en",
-          "name": "English"
-        }
-      ],
-      "status": "Released",
-      "vote_average": 8.8,
-      "vote_count": 18823,
-      "backdrop": "/LOTR.png",
-      "favorite": false
-    }
-  ]
+    ]
 }

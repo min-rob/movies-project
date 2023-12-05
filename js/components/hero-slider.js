@@ -38,6 +38,10 @@ const createFeaturedSlide = (movie) => {
     backdrop = movie.backdrop;
     id = movie.id;
 
+    if (backdrop === null || backdrop === undefined) {
+        backdrop = "/default-bg.jpg";
+    }
+
     newSlide.classList.add("container-fluid");
     newSlide.classList.add("slide");
     newSlide.setAttribute("id", `${id}`);

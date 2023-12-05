@@ -182,7 +182,10 @@ nav ul {
     transform: translate(-50%, -50%);
     min-width: 200px;
     max-width: 500px;
-    padding: 10px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
     border-radius: 10px;
     background-color: var(--color-primary);
     transition: all ease 0.3s;
@@ -326,6 +329,9 @@ nav ul {
 .home-btn {
     cursor: pointer;
 }
+.add-btn {
+    cursor: pointer;
+}
 .search-btn {
     cursor: pointer;
     transition: all ease-in 0.3s;
@@ -340,4 +346,106 @@ nav ul {
 }
 .closed {
     display: none;
+}
+
+.default-movies {
+    margin-bottom: 50px;
+}
+
+.add-movie-form {
+    position: fixed;
+    transform: translate(-50%, -10%);
+    bottom: 0;
+    left: 50%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+#add-movie {
+    left: 0;
+    width: 100%;
+    height: calc(100% - 41px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    & input {
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    & select {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+    }
+    & h2 {
+        margin-bottom: 24px;
+    }
+}
+#edit-movie {
+    position: absolute;
+    top: 41px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 41px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    & input {
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    & select {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+    }
+    & h2 {
+        margin-bottom: 24px;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+.btn-secondary {
+    width: 100%;
+    background-color: var(--color-sec-accent);
+    color: black;
+}
+
+.movie-tab {
+    position: absolute;
+    max-height: 800px;
+    width: 50%;
+    bottom: 100px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+[aria-current] {
+    background-color: var(--color-secondary);
+}
+
+.spinner-border {
+    position: relative;
+    top: 0%;
+    left: 50%;
 }

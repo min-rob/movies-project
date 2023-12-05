@@ -18,6 +18,8 @@ export const handleBtnClick = () => {
     const appBtn = document.querySelector("#app");
     const homeBtn = document.querySelector("#home");
     const searchBtn = document.querySelector("#search");
+    const addBtn = document.querySelector("#add");
+    const addMovieForm = document.querySelector(".add-movie-form");
 
     appBtn.addEventListener("click", (e) => {
         const genreList = document.querySelector(".genre-list");
@@ -36,6 +38,10 @@ export const handleBtnClick = () => {
     searchBtn.addEventListener("click", (e) => {
         const searchContainer = document.querySelector(".search-form");
         searchContainer.classList.toggle("hidden");
+    });
+
+    addBtn.addEventListener("click", (e) => {
+        addMovieForm.classList.toggle("hidden");
     });
 };
 

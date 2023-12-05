@@ -3,6 +3,7 @@ import {
     addFavorites,
     removeFavorites,
     getFavorites,
+    deleteMovie,
 } from "../api/movies.js";
 
 export const createMovieCard = (movie, isFav) => {
@@ -17,6 +18,17 @@ export const createMovieCard = (movie, isFav) => {
     vote_average = movie.vote_average;
     backdrop = movie.backdrop;
     id = movie.id;
+
+    if (backdrop === null || backdrop === undefined) {
+        backdrop = "/default-bg.jpg";
+    }
+    if (
+        vote_average === null ||
+        vote_average === 0 ||
+        vote_average === undefined
+    ) {
+        vote_average = "N/A";
+    }
 
     const card = document.createElement("div");
     card.classList.add("movie-card");
@@ -64,6 +76,14 @@ export const createMovieCard = (movie, isFav) => {
                             width="20"
                         /></button
                 ></span>
+                    <span class="card-trash"></span>
+                    <button class="btn btn-icon-trash">
+                        <img
+                            src="./assets/img/icons/trash-icon.svg"
+                            height="20"
+                            width="20"
+                        /></button
+                ></span>
             </div>
         </div>
     </div>
@@ -84,6 +104,15 @@ export const createMovieCard = (movie, isFav) => {
             await removeFavorites(movieId);
         }
     });
+
+    const trashBtn = card.querySelector(".btn-icon-trash");
+    trashBtn.addEventListener("click", async (e) => {
+        e.preventDefault();
+        const movieId = movie.id;
+
+        await deleteMovie(movieId);
+    });
+
     return card;
 };
 

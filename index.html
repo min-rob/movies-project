@@ -31,11 +31,6 @@
                                 </li>
                                 <li><a href="/">Home</a></li>
                                 <li><a href="/">Movies</a></li>
-                                <li>
-                                    <button class="btn btn-primary">
-                                        Add movie
-                                    </button>
-                                </li>
                             </ul>
                         </div>
                     </nav>
@@ -48,7 +43,7 @@
                 </div>
             </div>
         </section>
-        <section>
+        <section id="second-page">
             <div class="page-wrapper">
                 <div class="container-fluid movies-list">
                     <div class="row section-two movies-content">
@@ -78,6 +73,78 @@
                             <div id="movies"></div>
                         </div>
                     </div>
+                    <div class="container-fluid add-movie-form hidden">
+                        <div class="movie-tab d-flex flex-column">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        data-tab="add"
+                                        >Add</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-tab="edit">Edit</a>
+                                </li>
+                            </ul>
+                            <form id="add-movie" class="movie-form-add">
+                                <h2>Add a new movie</h2>
+                                <label> Movie Title </label>
+                                <input
+                                    id="movie-title"
+                                    type="text"
+                                    placeholder="Movie title"
+                                />
+                                <label> Release Year: </label>
+                                <input
+                                    id="movie-year"
+                                    type="text"
+                                    placeholder="MM-DD-YY"
+                                />
+                                <label id="movie-genre"> Movie Genre: </label>
+                                <select id="genre-list"></select>
+                                <label> Director: </label>
+                                <input
+                                    id="movie-director"
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                                <label> Cast: </label>
+                                <input
+                                    id="movie-cast"
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                                <label> Runtime: </label>
+                                <input
+                                    id="movie-runtime"
+                                    type="text"
+                                    placeholder="Minutes"
+                                />
+                                <label> Description: </label>
+                                <input
+                                    id="movie-description"
+                                    type="text"
+                                    placeholder="Description about the movie"
+                                />
+                                <label id="add-form-btn">
+                                    <button class="btn btn-secondary">
+                                        Submit
+                                    </button>
+                                </label>
+                            </form>
+                            <form
+                                id="edit-movie"
+                                class="movie-form-edit hidden"
+                            >
+                                <label class="movie-list"
+                                    >Current Movies:
+                                </label>
+                                <select id="movie-list"></select>
+                            </form>
+                        </div>
+                    </div>
                     <div class="bottom-menu-bar">
                         <div class="genre-list hide">
                             <h2>Genres:</h2>
@@ -96,6 +163,14 @@
                                 <img
                                     src="./assets/img/icons/home-icon.svg"
                                     id="home"
+                                />
+                            </div>
+                            <div class="add-btn">
+                                <img
+                                    src="./assets/img/icons/add-icon.svg"
+                                    id="add"
+                                    height="25"
+                                    width="25"
                                 />
                             </div>
                             <div
