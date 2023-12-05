@@ -177,14 +177,14 @@ export const addMovie = async (
 ) => {
     const newMovies = {
         title,
-        genre,
+        genres,
         description,
         release_date,
         runtime,
         cast,
         director,
     };
-    genre = [];
+    genres = [];
     const body = JSON.stringify(newMovies);
 
     try {

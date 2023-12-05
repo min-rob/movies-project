@@ -115,7 +115,6 @@ const addMovieSubmit = async () => {
         // Hide form and show spinner
         formFields.forEach((field) => (field.style.display = "none"));
         submitBtn.style.display = "none";
-        spinner.classList.remove("hidden");
 
         const newGenre = [
             { id: genre.value, name: genre.options[genre.selectedIndex].text },
@@ -133,9 +132,10 @@ const addMovieSubmit = async () => {
 
         formFields.forEach((field) => {
             field.value = "";
-            field.style.display = "block"; // Show form fields for next time
+            field.style.display = "block";
         });
-        submitBtn.style.display = "block"; // Show submit button for next time
+        submitBtn.style.display = "block";
+        window.location.reload();
     });
 };
 
@@ -233,9 +233,7 @@ const handleTabClick = () => {
     tabBtns.forEach((btn, index) => {
         btn.addEventListener("click", (e) => {
             e.preventDefault();
-            tabLinks.forEach((link) =>
-                link.setAttribute("aria-current", "false")
-            );
+            tabLinks.forEach((link) => link.setAttribute("aria-current", ""));
             tabBtns.forEach((btn) => btn.classList.remove("active"));
             btn.classList.add("active");
             btn.setAttribute("aria-current", "true");
