@@ -1,0 +1,23 @@
+{
+    "dependencies": {
+        "json-server": "^0.17.4"
+    },
+    "name": "movies-project",
+    "version": "1.0.0",
+    "description": "CodeUp movies project",
+    "main": "index.js",
+    "devDependencies": {},
+    "scripts": {
+        "start": "json-server --watch data/db.json"
+    },
+    "repository": {
+        "type": "git",
+        "url": "git+ssh://git@github.com/min-rob/movies-project.git"
+    },
+    "author": "min-rob",
+    "license": "ISC",
+    "bugs": {
+        "url": "https://github.com/min-rob/movies-project/issues"
+    },
+    "homepage": "https://github.com/min-rob/movies-project#readme"
+}

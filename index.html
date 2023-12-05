@@ -3,10 +3,196 @@
     <head>
         <meta charset="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-        <title>Document</title>
-        <link rel="stylesheet" href="./css/style.css" />
+        <title>WatchThis</title>
+        <link rel="stylesheet" href="./css/styles.css" />
     </head>
     <body>
+        <section id="first-page">
+            <div class="page-wrapper">
+                <header class="container-fluid header">
+                    <nav class="row">
+                        <div
+                            class="col-4 d-flex flex-column justify-content-center p-0"
+                            id="nav-lt"
+                        >
+                            <h2 class="logo-title">WatchThis</h2>
+                        </div>
+                        <div class="col-4 p-0" id="nav-center"></div>
+                        <div
+                            class="col-4 p-0 d-flex justify-content-end"
+                            id="nav-rt"
+                        >
+                            <ul
+                                class="d-flex justify-content-center align-items-center"
+                                id="nav-items"
+                            >
+                                <li>
+                                    <a href="/">Search</a>
+                                </li>
+                                <li><a href="/">Home</a></li>
+                                <li><a href="/">Movies</a></li>
+                            </ul>
+                        </div>
+                    </nav>
+                </header>
+                <div class="container-fluid features p-0">
+                    <div class="down-btn d-flex flex-column align-items-center">
+                        <p>scroll down</p>
+                        <img src="./assets/img/icons/down-icon.svg" />
+                    </div>
+                </div>
+            </div>
+        </section>
+        <section id="second-page">
+            <div class="page-wrapper">
+                <div class="container-fluid movies-list">
+                    <div class="row section-two movies-content">
+                        <div class="default-movies" data-page>
+                            <div class="favorite-movies">
+                                <h2>Favorite Movies:</h2>
+                                <div
+                                    class="favorite-movie-container d-flex gap-4"
+                                ></div>
+                            </div>
+                            <div class="featured-movies">
+                                <h2>Featured Movies:</h2>
+                                <div
+                                    class="featured-card-container d-flex gap-4"
+                                ></div>
+                            </div>
+                            <div class="latest-movies">
+                                <h2>Latest Movies:</h2>
+                                <div
+                                    class="latest-card-container d-flex gap-4"
+                                ></div>
+                            </div>
+                        </div>
+                        <div class="selected-movies hide" data-page></div>
+                        <div class="searched-movies hide" data-page>
+                            <h2 id="search-title"></h2>
+                            <div id="movies"></div>
+                        </div>
+                    </div>
+                    <div class="container-fluid add-movie-form hidden">
+                        <div class="movie-tab d-flex flex-column">
+                            <ul class="nav nav-tabs">
+                                <li class="nav-item">
+                                    <a
+                                        class="nav-link active"
+                                        aria-current="page"
+                                        data-tab="add"
+                                        >Add</a
+                                    >
+                                </li>
+                                <li class="nav-item">
+                                    <a class="nav-link" data-tab="edit">Edit</a>
+                                </li>
+                            </ul>
+                            <form id="add-movie" class="movie-form-add">
+                                <h2>Add a new movie</h2>
+                                <label> Movie Title </label>
+                                <input
+                                    id="movie-title"
+                                    type="text"
+                                    placeholder="Movie title"
+                                />
+                                <label> Release Year: </label>
+                                <input
+                                    id="movie-year"
+                                    type="text"
+                                    placeholder="MM-DD-YY"
+                                />
+                                <label id="movie-genre"> Movie Genre: </label>
+                                <select id="genre-list"></select>
+                                <label> Director: </label>
+                                <input
+                                    id="movie-director"
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                                <label> Cast: </label>
+                                <input
+                                    id="movie-cast"
+                                    type="text"
+                                    placeholder="Name"
+                                />
+                                <label> Runtime: </label>
+                                <input
+                                    id="movie-runtime"
+                                    type="text"
+                                    placeholder="Minutes"
+                                />
+                                <label> Description: </label>
+                                <input
+                                    id="movie-description"
+                                    type="text"
+                                    placeholder="Description about the movie"
+                                />
+                                <label id="add-form-btn">
+                                    <button class="btn btn-secondary">
+                                        Submit
+                                    </button>
+                                </label>
+                            </form>
+                            <form
+                                id="edit-movie"
+                                class="movie-form-edit hidden"
+                            >
+                                <label class="movie-list"
+                                    >Current Movies:
+                                </label>
+                                <select id="movie-list"></select>
+                            </form>
+                        </div>
+                    </div>
+                    <div class="bottom-menu-bar">
+                        <div class="genre-list hide">
+                            <h2>Genres:</h2>
+                            <div class="genres" id="genre-container"></div>
+                        </div>
+                        <div
+                            class="button-container d-flex justify-content-center gap-5 hidden"
+                        >
+                            <div class="app-btn">
+                                <img
+                                    src="./assets/img/icons/apps-icon.svg"
+                                    id="app"
+                                />
+                            </div>
+                            <div class="home-btn">
+                                <img
+                                    src="./assets/img/icons/home-icon.svg"
+                                    id="home"
+                                />
+                            </div>
+                            <div class="add-btn">
+                                <img
+                                    src="./assets/img/icons/add-icon.svg"
+                                    id="add"
+                                    height="25"
+                                    width="25"
+                                />
+                            </div>
+                            <div
+                                class="search-btn d-flex align-items-center gap-3"
+                            >
+                                <img
+                                    src="./assets/img/icons/search-icon.svg"
+                                    id="search"
+                                />
+                                <form class="search-form hidden">
+                                    <input
+                                        type="search"
+                                        placeholder="Search movies"
+                                    />
+                                </form>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+        <script src="https://www.youtube.com/s/player/31e0b6d9/www-widgetapi.vflset/www-widgetapi.js"></script>
         <script type="module" src="./js/main.js"></script>
     </body>
 </html>

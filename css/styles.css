@@ -1,0 +1,452 @@
+@import url("https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css")
+layer(framework);
+@import url("https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:ital,wght@0,300;0,400;0,500;0,600;0,700;1,300;1,400;1,500;1,600;1,700&display=swap");
+@import "resets.css";
+
+:root {
+    --text-display: "Bebas Neue", "san-serif";
+    --text-font: "Montserrat", "sans-serif";
+    --color-primary: #3496d5;
+    --color-secondary: #00b3df;
+    --color-pri-accent: #f9f871;
+    --color-sec-accent: #a0f189;
+}
+
+body {
+    font-family: var(--text-font);
+    background-color: black;
+    color: white;
+}
+
+.container-fluid.header {
+    margin-top: 15px;
+    margin-bottom: 15px;
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    z-index: 1;
+}
+
+nav ul {
+    display: flex;
+    flex-direction: row;
+    gap: 24px;
+}
+
+.hide {
+    display: none !important;
+}
+.hidden {
+    opacity: 0;
+    display: none;
+}
+
+.trailer-btn {
+    background-color: var(--color-primary);
+}
+
+.btn-primary {
+    background-color: var(--color-primary);
+}
+
+.page-wrapper {
+    min-height: 100dvh;
+    display: flex;
+    flex-direction: column;
+}
+
+.row {
+    margin-left: 0;
+    margin-right: 0;
+}
+.featured-container {
+    width: 100%;
+    margin-left: 0;
+    margin-right: 0;
+}
+
+.container-fluid:has(.row) {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    & > .row {
+        width: 100%;
+        max-width: 80%;
+    }
+}
+
+.container-fluid.features {
+    min-height: 100dvh;
+    position: relative;
+    overflow: hidden;
+}
+
+.container-fluid.slide {
+    position: absolute;
+    top: 0;
+    left: -100%;
+    height: 100%;
+    width: 100%;
+    padding-top: 60px;
+    transition: all ease 0.3s;
+    &.active {
+        left: 0;
+        & ~ .container-fluid.slide {
+            left: 100%;
+        }
+    }
+}
+
+.logo-title {
+    font-family: var(--text-display);
+    font-size: 38px;
+}
+
+.movie-title {
+    font-family: var(--text-display);
+    font-size: 128px;
+}
+
+.rating {
+    font-size: 32px;
+}
+
+.lt-info {
+    height: 100%;
+    justify-content: center;
+    align-items: start;
+}
+
+.movie-more-info {
+    background: rgba(110, 110, 110, 0.4);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(5px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px;
+    border-radius: 10px;
+    transform: scale(0.95) translateY(20px);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+    opacity: 0;
+
+    & li {
+        margin-top: 8px;
+    }
+    & .description {
+        font-size: 16px;
+        font-weight: 400;
+    }
+    & h3 {
+        font-size: 16px;
+        font-weight: 700;
+    }
+}
+
+.movie-more-info.show {
+    opacity: 1;
+    transform: scale(1) translateY(0);
+    transition: opacity 0.3s ease, transform 0.3s ease;
+}
+
+.pagination {
+    position: absolute;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    z-index: 2;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 12px;
+    cursor: pointer;
+}
+
+.down-btn {
+    position: absolute;
+    transform: translate(-50%, -50%);
+    bottom: 2%;
+    left: 50%;
+    z-index: 3;
+}
+
+.movies-list {
+    position: relative;
+    min-height: 100dvh;
+}
+
+.button-container {
+    position: fixed;
+    bottom: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    min-width: 200px;
+    max-width: 500px;
+    padding-left: 18px;
+    padding-right: 18px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border-radius: 10px;
+    background-color: var(--color-primary);
+    transition: all ease 0.3s;
+}
+
+.search-btn input {
+    border-radius: 10px;
+    padding-left: 8px;
+    border-color: transparent;
+}
+
+.movie-card {
+    font-family: var(--text-font);
+    font-size: 16px;
+    font-weight: 600;
+    color: white;
+    max-width: 300px;
+    max-height: 450px;
+    border: unset;
+    border-radius: 10px;
+    background-color: transparent;
+    & .card-body {
+        min-height: 250px;
+        min-width: 225px;
+        border-radius: 10px;
+    }
+    & .card-footer {
+        background-color: transparent;
+        padding-top: 10px;
+        padding-left: 0;
+        padding-right: 0;
+    }
+    & .movie-card-info {
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+}
+
+.movies-list > .row {
+    display: flex;
+    flex-direction: row;
+    gap: 100px;
+}
+
+.movie-card-rt {
+    display: flex;
+    align-items: center;
+    gap: 6px;
+}
+
+.featured-movies {
+    margin-top: 48px;
+    overflow-x: auto;
+}
+
+.favorite-movies {
+    margin-top: 48px;
+    overflow-x: auto;
+}
+
+.featured-movies h2 {
+    margin-bottom: 24px;
+}
+
+.latest-movies {
+    overflow-x: auto;
+}
+.latest-movies h2 {
+    margin-bottom: 24px;
+}
+
+.selected-movies {
+    margin-top: 48px;
+    overflow-x: auto;
+}
+
+.searched-movies {
+    margin-top: 48px;
+}
+
+.btn-icon {
+    padding: 0;
+}
+.movie-card-rt {
+    font-size: 12px;
+    display: flex;
+    align-items: center;
+}
+
+.card-title > p {
+    margin-bottom: 16px;
+}
+
+.genre-list {
+    display: flex;
+    flex-direction: column;
+    gap: 8px;
+    flex-wrap: wrap;
+    position: fixed;
+    bottom: 1%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background: rgba(110, 110, 110, 0.484);
+    box-shadow: 0 8px 32px 0 rgba(0, 0, 0, 0.37);
+    backdrop-filter: blur(6px);
+    border-radius: 10px;
+    border: 1px solid rgba(255, 255, 255, 0.18);
+    padding: 10px;
+    border-radius: 10px;
+}
+
+[data-genre] {
+    cursor: pointer;
+    transition: color 0.3s ease;
+}
+
+[data-genre]:hover {
+    color: var(--color-sec-accent);
+}
+
+.genres {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+[data-page] {
+    display: flex;
+    flex-direction: column;
+    gap: 3rem;
+}
+
+#card-container {
+    display: flex;
+    gap: 2rem;
+}
+
+.app-btn {
+    cursor: pointer;
+}
+.home-btn {
+    cursor: pointer;
+}
+.add-btn {
+    cursor: pointer;
+}
+.search-btn {
+    cursor: pointer;
+    transition: all ease-in 0.3s;
+}
+
+.trailer-modal-container {
+    position: absolute;
+    padding: 10px;
+    left: 45%;
+    bottom: 30%;
+    z-index: 4;
+}
+.closed {
+    display: none;
+}
+
+.default-movies {
+    margin-bottom: 80px;
+}
+
+.add-movie-form {
+    position: fixed;
+    transform: translate(-50%, -10%);
+    bottom: 0;
+    left: 50%;
+    padding-top: 12px;
+    padding-bottom: 12px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    &.hidden {
+        display: none;
+    }
+}
+
+#add-movie {
+    left: 0;
+    width: 100%;
+    height: calc(100% - 41px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    & input {
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    & select {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+    }
+    & h2 {
+        margin-bottom: 24px;
+    }
+}
+#edit-movie {
+    position: absolute;
+    top: 41px;
+    left: 0;
+    width: 100%;
+    height: calc(100% - 41px);
+    display: flex;
+    flex-direction: column;
+    padding: 30px 40px;
+    border-radius: 10px;
+    background-color: var(--color-secondary);
+    & input {
+        border: none;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+        margin-bottom: 20px;
+    }
+    & select {
+        margin-bottom: 20px;
+        border-radius: 8px;
+        height: 40px;
+        padding-left: 10px;
+    }
+    & h2 {
+        margin-bottom: 24px;
+    }
+    &.hidden {
+        display: none;
+    }
+}
+
+.btn-secondary {
+    width: 100%;
+    background-color: var(--color-sec-accent);
+    color: black;
+}
+
+.movie-tab {
+    position: absolute;
+    max-height: 800px;
+    width: 50%;
+    bottom: 100px;
+    background-color: var(--color-primary);
+    border-radius: 10px;
+}
+[aria-current] {
+    background-color: var(--color-secondary);
+}
+
+.spinner-border {
+    position: relative;
+    top: 0%;
+    left: 50%;
+}
