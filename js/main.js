@@ -8,18 +8,20 @@ import {
     deleteMovie,
     updateMovie,
 } from "./api/movies.js";
+
 import { getUsers, getUserById } from "./api/users.js";
+
 import {
     renderMovieCards,
     movieLatest,
     moviePopularity,
 } from "./components/cards.js";
+
 import {
     renderMovieSlide,
     handleActiveState,
     updatePagination,
     createPagination,
-    // moreInfoClick,
     handlePaginationClick,
     handleTrailerClick,
 } from "./components/hero-slider.js";
@@ -29,6 +31,7 @@ import {
     handleBtnClick,
     handleSearch,
 } from "./components/menu-app.js";
+
 import { renderGenrePage } from "./components/genre-display.js";
 
 const handleAppBarHide = () => {

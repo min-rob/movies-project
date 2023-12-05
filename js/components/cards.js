@@ -81,8 +81,8 @@ export const createMovieCard = (movie, isFav) => {
                     <button class="btn btn-icon" id="trash-btn">
                         <img
                             src="./assets/img/icons/trash-icon.svg"
-                            height="20"
-                            width="20"
+                            height="15"
+                            width="15"
                         />
                     </button></span>
             </div>
