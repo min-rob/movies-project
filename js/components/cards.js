@@ -56,7 +56,7 @@ export const createMovieCard = (movie, isFav) => {
                         height="20"
                         width="20"
                     />
-                    ${runtime}
+                    ${runtime}m
                 </span>
                 <span class="card-rating"
                     ><img
@@ -66,17 +66,16 @@ export const createMovieCard = (movie, isFav) => {
                     />
                     ${vote_average}</span
                 >
-                <span class="card-favorite"></span>
-                    <button class="btn btn-icon">
+                <span class="card-favorite">
+                <button class="btn btn-icon">
                         <img
                             src="./assets/img/icons/heart-${
                                 isFav ? "filled" : "outlined"
                             }.svg"
                             height="20"
                             width="20"
-                        /></button
-                ></span>
-                    <span class="card-trash"></span>
+                        /></button</span>
+                    <span class="card-trash">
                     <button class="btn btn-icon-trash">
                         <img
                             src="./assets/img/icons/trash-icon.svg"
